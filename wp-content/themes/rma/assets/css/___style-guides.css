@@ -1,0 +1,131 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap");
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: unset;
+
+  /* transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1); */
+  object-fit: cover;
+  /* user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none; */
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+body {
+  font-family: "Poppins", Sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 30px;
+  text-align: left;
+  color: #6f6f6f;
+}
+
+@keyframes underline-link {
+  0%,
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+
+  50% {
+    -webkit-transform: translateX(100%);
+    transform: translateX(100%);
+  }
+
+  50.01% {
+    -webkit-transform: translateX(-100%);
+    transform: translateX(-100%);
+  }
+}
+
+.link {
+  font-family: "Montserrat", Sans-serif;
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+  text-decoration: none;
+  line-height: 28px;
+  letter-spacing: 0.15em;
+  fill: #4ab5ff;
+  color: #4ab5ff;
+  background-color: #00000000;
+  border-style: none;
+  padding: 0px 0px 0px 0px;
+
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+}
+
+.link::before {
+  content: "";
+  border-bottom: 2px solid;
+  position: absolute;
+  bottom: 3px;
+  left: 0;
+  right: 0;
+}
+
+.link:hover::before {
+  animation: underline-link 0.8s cubic-bezier(0.58, 0.3, 0.005, 1) 0s 1;
+}
+
+h2 {
+  font-family: "Poppins", Sans-serif;
+  font-size: 70px;
+  font-weight: 800;
+  line-height: 75px;
+  text-align: left;
+
+  color: #0b377d;
+}
+
+.subtitle {
+  font-family: "Montserrat", Sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 16.8px;
+  letter-spacing: 0.25em;
+
+  text-transform: uppercase;
+  color: #6f6f6f;
+}
+
+/* NOTE: custom header-footer classes */
+.menu-item-has-children {
+  position: relative;
+  white-space: nowrap;
+}
+.menu > li > a {
+  text-transform: uppercase;
+  padding: 14px;
+}
+li .sub-menu {
+  display: none;
+  position: absolute;
+
+  background-color: #edeae8;
+  border-radius: 5px;
+  padding: 0.5rem;
+
+  left: 0;
+  width: 200%;
+}
+li:hover > ul {
+  display: block;
+}
+li .sub-menu a {
+  display: block;
+}
+@media (max-width: 767px) {
+  li .sub-menu {
+    width: 100%;
+  }
+}
